@@ -2,4 +2,4 @@ Hi, CI - CD Devops Job created in Jenkins to deploy archieved war files into Tom
 
 Checking Master Slave
 
---By Rohit Naidu (13/05/2020 18:43)
+--By Rohit Naidu (13/05/2020 18:46)
