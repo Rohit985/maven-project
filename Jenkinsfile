@@ -6,7 +6,7 @@ pipeline
     stage ('SCM Repository')
     {
         steps {
-            git branch: 'brancjh', url: 'https://github.com/Rohit985/maven-project.git'
+            git branch: 'master', url: 'https://github.com/Rohit985/maven-project.git'
         }
     }
     
