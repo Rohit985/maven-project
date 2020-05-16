@@ -26,7 +26,7 @@ pipeline
 			}
               }
     }
-	stage ('SCM pakcgae')
+	stage ('SCM package')
     {
         steps {
             withMaven(maven: 'Local_Maven') {
