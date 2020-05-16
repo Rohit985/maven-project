@@ -13,22 +13,25 @@ pipeline
     stage ('SCM Compile')
     {
         steps {
-            withMaven(maven: 'Local_Maven') 
-            {sh 'maven compile'        }
-    }
+            withMaven(maven: 'Local_Maven') {
+            sh 'maven compile'        
+			}
+              }
     }
 	stage ('SCM Test')
     {
         steps {
-            withMaven(maven: 'Local_Maven') 
-            {sh 'maven test'        }
-    }
+            withMaven(maven: 'Local_Maven') {
+            sh 'maven test'        
+			}
+              }
     }
 	stage ('SCM pakcgae')
     {
         steps {
-            withMaven(maven: 'Local_Maven') 
-            {sh 'maven package'        }
+            withMaven(maven: 'Local_Maven') {
+            sh 'maven package'        
+			}
     }
     }
 }
