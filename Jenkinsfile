@@ -6,32 +6,43 @@ pipeline
     stage ('SCM Repository')
     {
         steps {
-            git branch: 'master', url: 'https://github.com/Rohit985/maven-project.git'
-              }
+            git branch: 'brancjh', url: 'https://github.com/Rohit985/maven-project.git'
+        }
     }
-    stage ('SCM compile')
+    
+    stage ('SCM Compile')
     {
         steps {
             withMaven(maven: 'Local_Maven') {
-            sh 'mvn compile'        
+            sh 'maven compile'        
 			}
               }
     }
-    stage ('SCM test')
+	stage ('SCM Test')
     {
         steps {
             withMaven(maven: 'Local_Maven') {
-            sh 'mvn test'        
+            sh 'maven test'        
 			}
               }
     }
-    stage ('SCM package')
+	stage ('SCM pakcgae')
     {
         steps {
             withMaven(maven: 'Local_Maven') {
-            sh 'mvn package'        
+            sh 'maven package'        
 			}
+    }
+    }
+	stage ('SCM deploy Tomcat')
+    {
+        steps {
+             sshagent (credentials: ['deploy-dev']) {
+	         sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.18.5:/var/lib/tomcat/webapps'
+            }
               }
-    }		
+    }
 }
 }
+
+
