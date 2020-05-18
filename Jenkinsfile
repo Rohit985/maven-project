@@ -34,7 +34,7 @@ pipeline
 			}
               }
     }
-	stage ('SCM deploy into Tomcat')
+	stage ('SCM deploy into Tomcat server')
     {
         steps {
             sshagent (credentials: ['tomcat-ssh-id']) {
