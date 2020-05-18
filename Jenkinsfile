@@ -14,7 +14,7 @@ pipeline
     {
         steps {
             withMaven(maven: 'Local_Maven') {
-            sh 'maven compile'        
+            sh 'mvn compile'        
 			}
               }
     }
@@ -22,7 +22,7 @@ pipeline
     {
         steps {
             withMaven(maven: 'Local_Maven') {
-            sh 'maven test'        
+            sh 'mvn test'        
 			}
               }
     }
@@ -30,7 +30,7 @@ pipeline
     {
         steps {
             withMaven(maven: 'Local_Maven') {
-            sh 'maven package'        
+            sh 'mvn package'        
 			}
               }
     }
