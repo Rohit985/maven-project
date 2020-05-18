@@ -37,8 +37,8 @@ pipeline
 	stage ('SCM deploy Tomcat')
     {
         steps {
-             sshagent (credentials: ['deploy-dev']) {
-	         sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.18.5:/var/lib/tomcat/webapps'
+             sshagent (credentials: ['tomcat-ssh-id']) {
+	         sh 'scp -o StrictHostKeyChecking=no **/target/*.war ec2-user@172.31.18.5:var/lib/tomcat/webapps'
             }
               }
     }
